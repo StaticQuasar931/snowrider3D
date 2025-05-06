@@ -24,15 +24,15 @@
   <meta name="twitter:description" content="Dodge, collect, and ride the snowy hills! Play Snow Rider 3D unblocked on any device – no installs.">
   <meta name="twitter:image" content="snow-rider-3d.png">
 
-  <!-- Favicon & Styles -->
   <link rel="shortcut icon" href="TemplateData/favicon.ico">
   <link rel="stylesheet" href="TemplateData/style.css">
+
   <style>
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
-      background-color: black;
+      background: #000;
       overflow: hidden;
     }
     #gameContainer {
@@ -53,7 +53,9 @@
       font-weight: bold;
       z-index: 9999;
       animation: twinkle 2s infinite alternate;
-      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
     .static-menu:hover {
       box-shadow: 0 0 12px #00ffff;
@@ -61,26 +63,19 @@
     .static-menu a {
       color: #00ffff;
       text-decoration: none;
-      display: block;
-      width: 100%;
-      height: 100%;
     }
     #closeStatic {
-      position: absolute;
-      top: 4px;
-      right: 6px;
-      font-weight: bold;
       color: red;
       cursor: pointer;
-      z-index: 10000;
+      font-size: 16px;
+      font-weight: bold;
     }
     @keyframes twinkle {
-      0% { box-shadow: 0 0 5px #00f; }
-      100% { box-shadow: 0 0 15px #00ffff; }
+      0% { box-shadow: 0 0 6px #00f; }
+      100% { box-shadow: 0 0 14px #00ffff; }
     }
   </style>
 
-  <!-- Scripts -->
   <script src="TemplateData/UnityProgress.js"></script>
   <script src="Build/UnityLoader.js"></script>
   <script>
@@ -94,14 +89,14 @@
     });
 
     let staticMenuTimer;
-
-    function closeStaticMenu() {
+    function closeStaticMenu(event) {
+      event.stopPropagation();
       const menu = document.querySelector('.static-menu');
       menu.style.display = 'none';
       if (staticMenuTimer) clearTimeout(staticMenuTimer);
       staticMenuTimer = setTimeout(() => {
-        menu.style.display = 'block';
-      }, 180000); // 3 minutes = 180000 ms
+        menu.style.display = 'flex';
+      }, 180000); // 3 minutes
     }
 
     window.onbeforeunload = function () {
@@ -113,7 +108,7 @@
 <body>
   <!-- Static Menu -->
   <div class="static-menu" onclick="window.open('https://sites.google.com/view/staticquasar931/gm3z', '_blank')">
-    <div id="closeStatic" onclick="event.stopPropagation(); closeStaticMenu()">✖</div>
+    <div id="closeStatic" onclick="closeStaticMenu(event)">✖</div>
     <span>More Unblocked Games by Static</span>
   </div>
 
