@@ -42,8 +42,8 @@
     }
     .static-menu {
       position: fixed;
-      top: 10px;
-      left: 10px;
+      top: 12px;
+      left: 12px;
       background: rgba(0, 0, 0, 0.85);
       color: #00ffff;
       padding: 10px 14px;
@@ -53,20 +53,21 @@
       font-weight: bold;
       z-index: 9999;
       animation: twinkle 2s infinite alternate;
-    }
-    .static-menu:hover {
-      box-shadow: 0 0 10px #00ffff;
+      transition: opacity 0.3s ease;
     }
     .static-menu a {
       color: #00ffff;
       text-decoration: none;
     }
+    .static-menu:hover {
+      box-shadow: 0 0 12px #00ffff;
+    }
     #closeStatic {
       position: absolute;
       top: 4px;
       right: 6px;
-      font-weight: bold;
       color: red;
+      font-weight: bold;
       cursor: pointer;
     }
     @keyframes twinkle {
@@ -89,10 +90,11 @@
     });
 
     function closeStaticMenu() {
-      document.querySelector('.static-menu').style.display = 'none';
+      const menu = document.querySelector('.static-menu');
+      menu.style.display = 'none';
       setTimeout(() => {
-        document.querySelector('.static-menu').style.display = 'block';
-      }, 180000); // 3 minutes
+        menu.style.display = 'block';
+      }, 180000); // Reappear in 3 minutes
     }
 
     window.onbeforeunload = function () {
