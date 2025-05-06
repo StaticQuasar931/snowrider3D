@@ -2,28 +2,29 @@
 <html lang="en-us">
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Play Snow Rider 3D – Unblocked Sled G@me | StaticQuasar931</title>
-  <meta name="description" content="Ride snowy slopes in Snow Rider 3D! Dodge obstacles, collect gifts, and go far. Fully unblocked and school-safe.">
-  <meta name="keywords" content="Snow Rider 3D, snow rider unblocked, sled game school, snow rider 3D game unblocked, Chromebook snow game, staticquasar931 games, winter arcade unbl0cked, snow g@me">
+  <title>Play Snow Rider 3D – Unblocked Winter G@me at School | StaticQuasar931</title>
+  <meta name="description" content="Slide down snowy slopes in Snow Rider 3D! Dodge obstacles, collect presents, and go the distance. Unblocked and school-safe on all devices.">
+  <meta name="keywords" content="Snow Rider 3D, snow rider unblocked, snow rider game at school, unblocked snow game, snow sled game, winter racing g@me, snow rider Chromebook, snow rider staticquasar931, snow game school-safe, unbl0cked snow game, sled runner unblocked">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://sites.google.com/view/staticquasar931/gm3z/snow-rider-3d" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Play Snow Rider 3D – Unblocked Winter Game">
-  <meta property="og:description" content="Slide and dodge the snowy slopes! Play Snow Rider 3D unblocked at school.">
+  <meta property="og:title" content="Play Snow Rider 3D – Unblocked Snow Sled Game">
+  <meta property="og:description" content="Race through winter in Snow Rider 3D! Play fully unblocked at school or work.">
   <meta property="og:image" content="snow-rider-3d.png">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sites.google.com/view/staticquasar931/gm3z/snow-rider-3d">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Snow Rider 3D – School-Safe, Unblocked Fun">
-  <meta name="twitter:description" content="Snow Rider 3D works at school – no downloads. Race down icy hills & collect gifts.">
+  <meta name="twitter:title" content="Snow Rider 3D – School Unblocked Sled G@me">
+  <meta name="twitter:description" content="Dodge, collect, and ride the snowy hills! Play Snow Rider 3D unblocked on any device – no installs.">
   <meta name="twitter:image" content="snow-rider-3d.png">
 
-  <!-- Favicon and Styles -->
+  <!-- Favicon & Styles -->
   <link rel="shortcut icon" href="TemplateData/favicon.ico">
   <link rel="stylesheet" href="TemplateData/style.css">
   <style>
@@ -31,12 +32,13 @@
       margin: 0;
       padding: 0;
       height: 100%;
-      background: black;
+      background-color: black;
       overflow: hidden;
     }
     #gameContainer {
       width: 100vw;
       height: 100vh;
+      margin: 0;
     }
     .static-menu {
       position: fixed;
@@ -74,24 +76,19 @@
   </style>
 
   <!-- Scripts -->
-  <script src="Build/loader.js"></script>
+  <script src="TemplateData/UnityProgress.js"></script>
+  <script src="Build/UnityLoader.js"></script>
   <script>
-    let staticMenuTimer;
+    var gameInstance = UnityLoader.instantiate("gameContainer", "Build/SnowRider3D-gd-1.json", {
+      onProgress: UnityProgress,
+      Module: {
+        onRuntimeInitialized: function () {
+          UnityProgress(gameInstance, "complete");
+        }
+      }
+    });
 
-    window.onload = () => {
-      createUnityInstance(document.querySelector("#gameContainer"), {
-        dataUrl: "Build/SnowRider3D.data.unityweb",
-        frameworkUrl: "Build/SnowRider3D.framework.js.unityweb",
-        codeUrl: "Build/SnowRider3D.wasm.unityweb",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "YourCompany",
-        productName: "SnowRider3D",
-        productVersion: "1.0",
-      }).catch((message) => {
-        alert("Game failed to load. Please refresh or try a different browser.");
-        console.error(message);
-      });
-    };
+    let staticMenuTimer;
 
     function closeStaticMenu() {
       const menu = document.querySelector('.static-menu');
@@ -99,16 +96,18 @@
       if (staticMenuTimer) clearTimeout(staticMenuTimer);
       staticMenuTimer = setTimeout(() => {
         menu.style.display = 'block';
-      }, 180000); // 3 minutes
+      }, 180000); // 3 minutes = 180000 ms
     }
 
-    window.onbeforeunload = () => "Are you sure you want to leave? Progress may not be saved.";
+    window.onbeforeunload = function () {
+      return "Are you sure you want to leave? Progress may not be saved.";
+    };
   </script>
 </head>
 
 <body>
   <!-- Static Menu -->
-  <div class="static-menu" id="staticMenu">
+  <div class="static-menu">
     <div id="closeStatic" onclick="closeStaticMenu()">✖</div>
     <a href="https://sites.google.com/view/staticquasar931/gm3z" target="_blank">More Unblocked Games by Static</a>
   </div>
