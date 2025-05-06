@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en-us">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -9,7 +8,7 @@
 
   <!-- SEO Meta -->
   <link rel="canonical" href="https://staticquasar931.github.io/SnowRider3D/">
-  <meta name="description" content="Play Snow Rider 3D unblocked at school or work! Ride the slopes, dodge obstacles, and collect gifts in this fun holiday-themed snowboard g@me.">
+  <meta name="description" content="Play Snow Rider 3D unblocked at school or work! Ride snowy slopes, dodge obstacles, and collect gifts in this fun snowboarding g@me.">
   <meta name="keywords" content="Snow Rider 3D, snowrider, snow rider unblocked, snow rider g@me, mathnook, school-safe g@mes, snowboarding g@me, play snow rider online, snow rider 3d at school, staticquasar931, unbl0cked snow g@mes, winter g@mes, static games">
   <meta name="author" content="StaticQuasar931">
 
@@ -26,26 +25,36 @@
   <meta name="twitter:description" content="Play Snow Rider 3D unblocked – a snowy slope surfing g@me!">
   <meta name="twitter:image" content="snow-rider-3d.png">
 
-  <!-- Favicon + CSS -->
+  <!-- Favicon + Style -->
   <link rel="shortcut icon" href="TemplateData/favicon.ico">
   <link rel="stylesheet" href="TemplateData/style.css">
 
-  <!-- Unity Game Scripts -->
-  <script src="TemplateData/UnityProgress.js"></script>
+  <!-- Unity Game Loader (Fixed) -->
   <script src="Build/UnityLoader.js"></script>
-  <script>
-    var gameInstance = UnityLoader.instantiate("gameContainer", "Build/SnowRider3D-gd-1.json", {
-      onProgress: UnityProgress,
-      Module: {
-        onRuntimeInitialized: function () {
-          UnityProgress(gameInstance, "complete");
-        }
-      }
-    });
-  </script>
 
   <!-- Static Menu Styles -->
   <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: black;
+    }
+
+    #gameContainer {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    canvas {
+      width: 100% !important;
+      height: 100% !important;
+      display: block;
+    }
+
     #staticMenu {
       position: fixed;
       top: 10px;
@@ -59,12 +68,13 @@
       font-weight: bold;
       z-index: 9999;
       animation: twinkle 1.5s infinite alternate;
-      transition: all 0.3s ease;
     }
+
     #staticMenu a {
       color: #00ffcc;
       text-decoration: none;
     }
+
     #staticMenuClose {
       position: absolute;
       top: 4px;
@@ -73,6 +83,7 @@
       font-size: 14px;
       cursor: pointer;
     }
+
     @keyframes twinkle {
       0% { opacity: 0.6; }
       100% { opacity: 1; }
@@ -80,9 +91,9 @@
   </style>
 </head>
 
-<body style="overflow:hidden; margin:0; padding:0;">
+<body>
 
-  <!-- Static Menu (Top Left) -->
+  <!-- Static Menu -->
   <div id="staticMenu">
     <div id="staticMenuClose" onclick="hideStaticMenu()">✕</div>
     <a href="https://sites.google.com/view/staticquasar931/gm3z" target="_blank">More Unblocked Games by Static</a>
@@ -92,23 +103,24 @@
       document.getElementById('staticMenu').style.display = 'none';
       setTimeout(() => {
         document.getElementById('staticMenu').style.display = 'block';
-      }, 180000); // reappear after 3 mins
+      }, 180000); // 3 minutes
     }
   </script>
 
-  <!-- Unity WebGL Game Container -->
-  <div class="webgl-content" style="position: absolute; width: 100%; height: 100%;">
-    <div id="gameContainer" style="width: 960px; height: 600px; margin: auto"></div>
-  </div>
+  <!-- Unity WebGL Game -->
+  <div id="gameContainer"></div>
+  <script>
+    var gameInstance = UnityLoader.instantiate("gameContainer", "Build/SnowRider3D-gd-1.json");
+  </script>
 
-  <!-- Hidden SEO Content -->
+  <!-- Hidden SEO Block -->
   <div style="display: none;">
     <h1>Snow Rider 3D – Unblocked Snowboarding G@me at School</h1>
     <p>
-      Snow Rider 3D is a fun holiday-themed snowboard g@me where you race down winter slopes, avoid trees, and collect presents. This version is fully unblocked for school and Chromebooks, no downloads needed! Snow Rider 3D is also known from sites like Mathnook, but here you can play it full screen, ad-free, and smooth. Visit 
-      <a href="https://sites.google.com/view/staticquasar931/gm3z">Static's game hub</a> for more unbl0cked fun!
+      Play Snow Rider 3D right now — unblocked, fullscreen, and smooth on all devices. This g@me lets you slide down snowy hills dodging trees and grabbing gifts. Works perfectly on school Wi-Fi, Chromebooks, and desktops. No downloads, no login, just press play. Visit 
+      <a href="https://sites.google.com/view/staticquasar931/gm3z">Static’s Game Hub</a> for more g@mes that work at school!
     </p>
   </div>
-</body>
 
+</body>
 </html>
