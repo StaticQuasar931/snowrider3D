@@ -1,69 +1,40 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-  <title>Snow Rider 3D – Unblocked G@me at School</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Play Snow Rider Online - Free & Unblocked on StaticQuasar931</title>
 
-  <!-- SEO Meta -->
-  <link rel="canonical" href="https://staticquasar931.github.io/SnowRider3D/">
-  <meta name="description" content="Play Snow Rider 3D unblocked at school or work! Ride snowy slopes, dodge obstacles, and collect gifts in this fun snowboarding g@me.">
-  <meta name="keywords" content="Snow Rider 3D, snowrider, snow rider unblocked, snow rider g@me, mathnook, school-safe g@mes, snowboarding g@me, play snow rider online, snow rider 3d at school, staticquasar931, unbl0cked snow g@mes, winter g@mes, static games">
-  <meta name="author" content="StaticQuasar931">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Snow Rider 3D – Unblocked at School">
-  <meta property="og:description" content="Snow Rider 3D – snowboard through gifts and trees in this fun unblocked g@me! No installs, just pure winter fun.">
-  <meta property="og:image" content="snow-rider-3d.png">
-  <meta property="og:url" content="https://staticquasar931.github.io/SnowRider3D/">
-  <meta property="og:type" content="website">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Snow Rider 3D – Play Unblocked">
-  <meta name="twitter:description" content="Play Snow Rider 3D unblocked – a snowy slope surfing g@me!">
-  <meta name="twitter:image" content="snow-rider-3d.png">
-
-  <!-- Favicon + Unity CSS -->
-  <link rel="shortcut icon" href="TemplateData/favicon.ico">
-  <link rel="stylesheet" href="TemplateData/style.css">
-  <script src="Build/UnityLoader.js"></script>
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Play Snow Rider online for free! Experience the most popular snowboarding and sled racing game unblocked at school or work. Ride downhill, dodge obstacles, and perform tricks. No downloads needed!" />
+  <meta name="keywords" content="Snow Rider, play Snow Rider online, Snow Rider unblocked, free Snow Rider game, sledding game, snowboarding simulator, unblocked winter games, free online Snow Rider, play at school, no download Snow Rider, best snowboarding games, Snow Rider browser game, sled race game, downhill racing game, snow adventure game, unblocked snow games, online winter sports game, fun Christmas games, fast-paced sledding game, school-friendly games, extreme snowboarding" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://staticquasar931.github.io/SnowRider3D/" />
 
   <style>
     html, body {
       margin: 0;
       padding: 0;
-      overflow: hidden;
       height: 100%;
+      overflow: hidden;
       background: black;
+      font-family: Arial, sans-serif;
     }
 
-    #gameWrapper {
+    iframe {
       position: fixed;
-      top: 0; left: 0;
+      top: 0;
+      left: 0;
       width: 100vw;
       height: 100vh;
-      background: black;
+      border: none;
       z-index: 0;
-    }
-
-    #gameContainer {
-      width: 100%;
-      height: 100%;
-    }
-
-    canvas {
-      width: 100% !important;
-      height: 100% !important;
-      display: block;
     }
 
     #staticMenu {
       position: fixed;
       top: 10px;
       left: 10px;
-      z-index: 9999;
       background: rgba(0, 0, 0, 0.85);
       color: white;
       padding: 10px 16px;
@@ -71,6 +42,7 @@
       font-family: sans-serif;
       font-size: 15px;
       font-weight: bold;
+      z-index: 9999;
       animation: twinkle 1.5s infinite alternate;
     }
 
@@ -92,17 +64,22 @@
       0% { opacity: 0.6; }
       100% { opacity: 1; }
     }
-  </style>
-</head>
 
-<body>
-  <!-- Static Menu -->
-  <div id="staticMenu">
-    <div id="staticMenuClose" onclick="hideStaticMenu()">✕</div>
-    <a href="https://sites.google.com/view/staticquasar931/gm3z" target="_blank">More Unblocked Games by Static</a>
-  </div>
+    .seo-content {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(1px, 1px, 1px, 1px);
+      white-space: nowrap;
+    }
+  </style>
 
   <script>
+    window.onbeforeunload = function () {
+      return "Are you sure you want to leave? Your progress may not be saved.";
+    };
+
     function hideStaticMenu() {
       const menu = document.getElementById('staticMenu');
       menu.style.display = 'none';
@@ -111,23 +88,32 @@
       }, 180000); // 3 minutes
     }
   </script>
+</head>
+<body>
 
-  <!-- Unity Game Container -->
-  <div id="gameWrapper">
-    <div id="gameContainer"></div>
+  <!-- Fullscreen Game Iframe -->
+  <iframe 
+    src="https://drippy-cat.github.io/snowrider3D/" 
+    allowfullscreen="true" 
+    scrolling="no">
+  </iframe>
+
+  <!-- Static Menu Only -->
+  <div id="staticMenu">
+    <div id="staticMenuClose" onclick="hideStaticMenu()">✕</div>
+    <a href="https://sites.google.com/view/staticquasar931/gm3z" target="_blank">More Unblocked Games by Static</a>
   </div>
 
-  <script>
-    UnityLoader.instantiate("gameContainer", "Build/SnowRider3D-gd-1.json");
-  </script>
-
-  <!-- Hidden SEO -->
-  <div style="display: none;">
-    <h1>Snow Rider 3D – Unblocked Game for School or Anywhere</h1>
-    <p>
-      Snow Rider 3D is a holiday-themed slope surfing g@me where you dodge trees and collect presents. Fully unblocked and school-safe, it runs smooth on Chromebooks, PCs, and mobile. Try it now and explore 
-      <a href="https://sites.google.com/view/staticquasar931/gm3z">more games by Static</a>.
-    </p>
+  <!-- Hidden SEO Content -->
+  <div class="seo-content">
+    <h1>Play Snow Rider - Free & Unblocked Sledding Game</h1>
+    <p>Snow Rider is one of the most popular unblocked games played at school, offering a thrilling sled racing and snowboarding experience. Navigate through snowy hills, dodge obstacles, and perform epic tricks to score high!</p>
+    <h2>Why Play Snow Rider on StaticQuasar931?</h2>
+    <p>✔️ Unblocked everywhere – perfect for school.<br>
+       ✔️ No downloads needed – play instantly in browser.<br>
+       ✔️ Fullscreen fast – the best sledding game online.</p>
+    <p>Start playing now on StaticQuasar931’s unblocked game hub!</p>
   </div>
+
 </body>
 </html>
