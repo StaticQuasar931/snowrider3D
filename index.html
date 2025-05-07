@@ -29,7 +29,7 @@
   <link rel="shortcut icon" href="TemplateData/favicon.ico">
   <link rel="stylesheet" href="TemplateData/style.css">
 
-  <!-- Unity Game Loader (Fixed) -->
+  <!-- Unity Game Loader -->
   <script src="Build/UnityLoader.js"></script>
 
   <!-- Static Menu Styles -->
@@ -39,14 +39,17 @@
       padding: 0;
       overflow: hidden;
       background: black;
+      height: 100%;
+      width: 100%;
     }
 
     #gameContainer {
+      position: fixed;
+      top: 0;
+      left: 0;
       width: 100vw;
       height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      z-index: 1;
     }
 
     canvas {
@@ -66,8 +69,9 @@
       font-family: sans-serif;
       font-size: 15px;
       font-weight: bold;
-      z-index: 9999;
+      z-index: 99999;
       animation: twinkle 1.5s infinite alternate;
+      pointer-events: auto;
     }
 
     #staticMenu a {
@@ -100,20 +104,21 @@
   </div>
   <script>
     function hideStaticMenu() {
-      document.getElementById('staticMenu').style.display = 'none';
+      const menu = document.getElementById('staticMenu');
+      menu.style.display = 'none';
       setTimeout(() => {
-        document.getElementById('staticMenu').style.display = 'block';
+        menu.style.display = 'block';
       }, 180000); // 3 minutes
     }
   </script>
 
-  <!-- Unity WebGL Game -->
+  <!-- Game Container -->
   <div id="gameContainer"></div>
   <script>
-    var gameInstance = UnityLoader.instantiate("gameContainer", "Build/SnowRider3D-gd-1.json");
+    UnityLoader.instantiate("gameContainer", "Build/SnowRider3D-gd-1.json");
   </script>
 
-  <!-- Hidden SEO Block -->
+  <!-- Hidden SEO Content -->
   <div style="display: none;">
     <h1>Snow Rider 3D – Unblocked Snowboarding G@me at School</h1>
     <p>
